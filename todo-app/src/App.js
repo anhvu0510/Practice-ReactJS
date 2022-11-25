@@ -1,46 +1,42 @@
 import { useState } from 'react'
 
 
-// Sử dụng bình thường
+import ToDoList from './components/ToDoList'
 
-const CounterNomal = () => {
-  const [counter, setCounter] = useState(0)
-  const handlerIncrease = (isIncreate = true) => isIncreate ?  setCounter(counter + 1) : setCounter(counter - 1)
-  return (
-      <div className="Counter">
-        <h1>{counter}</h1>
-        <h2> {counter || ''}</h2>
-        <button onClick={() => handlerIncrease(true)}> Increase</button>
-        <button onClick={() => handlerIncrease(false)}> Decrease</button>
-      </div>
-  )
-}
 
-const TodoComponent = () => {
-  const [job, setJob] = useState('')
-  const [jobs, setJobs] = useState([])
-  const handlerList = () => {
-    setJobs(pre => {
-      setJob('')
-      return  [...pre, job]
-    })
+const list = [
+  {
+    id: 1,
+    job: 'Làm việc nhà'
+  },
+  {
+    id: 2,
+    job: 'Làm việc nhà'
+  },
+  {
+    id: 3,
+    job: 'Làm việc nhà'
+  },
+  {
+    id: 4,
+    job: 'Làm việc nhà'
   }
-  return (
-    <div >
-        <input value={job} onChange = {e => setJob(e.target.value)}></input>
-        <button onClick={handlerList}>ADD</button>
-        <ul>
-            {jobs.map((item, index) => (<li key = {index}> {item}</li>))}
-        </ul>
-    </div>
-  );
-}
-
+]
+// Sử dụng bình thường
 function App() {
   return (
-    <div className='app'>
-      <TodoComponent />
-      <CounterNomal />
+    <div className='App'>
+      <ToDoList title='Danh sách việc phải làm' listJob={list}/>
+      <ToDoList title='Danh sách việc phải làm' listJob={list}/>
+
+      <ToDoList title='Danh sách việc phải làm' listJob={list}/>
+      <ToDoList title='Danh sách việc phải làm' listJob={list}/>
+      <ToDoList title='Danh sách việc phải làm' listJob={list}/>
+      <ToDoList title='Danh sách việc phải làm' listJob={list}/>
+      <ToDoList title='Danh sách việc phải làm' listJob={list}/>
+      <ToDoList title='Danh sách việc phải làm' listJob={list}/>
+      <ToDoList title='Danh sách việc phải làm' listJob={list}/>
+
     </div>
   )
 }
