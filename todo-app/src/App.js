@@ -27,16 +27,6 @@ function App() {
   return (
     <div className='App'>
       <ToDoList title='Danh sách việc phải làm' listJob={list}/>
-      <ToDoList title='Danh sách việc phải làm' listJob={list}/>
-
-      <ToDoList title='Danh sách việc phải làm' listJob={list}/>
-      <ToDoList title='Danh sách việc phải làm' listJob={list}/>
-      <ToDoList title='Danh sách việc phải làm' listJob={list}/>
-      <ToDoList title='Danh sách việc phải làm' listJob={list}/>
-      <ToDoList title='Danh sách việc phải làm' listJob={list}/>
-      <ToDoList title='Danh sách việc phải làm' listJob={list}/>
-      <ToDoList title='Danh sách việc phải làm' listJob={list}/>
-
     </div>
   )
 }
