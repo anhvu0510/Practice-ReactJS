@@ -1,5 +1,16 @@
 import React from 'react'
 
-export default function ToDo({ job = {} }) {
-  return (<li key={job.id}>{job.job}</li>)
-}
+export default React.memo(function ToDo({ id = '', name = '', onClickRemove = ''}) {
+  console.log(`Re-Render >>> ToDo: ${id}`)
+  return (
+    <li style = {{margin: '2px'}}>
+      {name}
+      <button 
+          onClick={onClickRemove} value={id} 
+          style={{margin: '2px 10px'}}
+        > 
+        DONE 
+        </button>
+    </li>
+  )
+})

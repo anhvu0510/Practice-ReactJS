@@ -31,6 +31,11 @@ Example when learn React
       - Call userLayoutEffect callback
       - Render UI
   4. **useRef**: Lưu giá trị tham chiếu từ bên ngoài
-  5. **useCallback**
-  6. **useMemo**
-  7. **useReduce**
+  5. **useCallback**: 
+     1. Tránh việc KHỞI TẠO các Function quá nhiều lần khi Re-Render
+     2. Component con phải sử dụng **React.memo** vì nếu không dùng thì lúc nào Component con cũng sẽ được Re-Render theo Component cha
+  6. **useMemo**: 
+     1. Tránh việc THỰC THI các logic của các Function trong lúc Re-Render
+  7. **useReducer**
+     1. Các bước: Init State => Action => Reducer (func logic cho action) => Dispatch (gửi đi)
+  8. **useImperativeHandle**

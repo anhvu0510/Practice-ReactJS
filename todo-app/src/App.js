@@ -1,32 +1,12 @@
-import { useState } from 'react'
-
-
 import ToDoList from './components/ToDoList'
-
-
-const list = [
-  {
-    id: 1,
-    job: 'Làm việc nhà'
-  },
-  {
-    id: 2,
-    job: 'Làm việc nhà'
-  },
-  {
-    id: 3,
-    job: 'Làm việc nhà'
-  },
-  {
-    id: 4,
-    job: 'Làm việc nhà'
-  }
-]
+import ToDoListReducer from './components/ToDoListReducer'
+import { StoreContext, useStore } from './store'
 // Sử dụng bình thường
 function App() {
+  const [state, dispatch] = useStore(StoreContext)
   return (
     <div className='App'>
-      <ToDoList title='Danh sách việc phải làm' listJob={list}/>
+      <ToDoListReducer />
     </div>
   )
 }
