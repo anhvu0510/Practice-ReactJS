@@ -13,4 +13,4 @@ Example when learn React
   - Set state vs sử dụng callback
   - Initial State sử dụng callback function
   - Set State là thay thế state bằng giá trị mới
-- userEffect
+- useEffect
