@@ -1,5 +1,6 @@
 import { useReducer, useCallback} from 'react'
 import ToDo from './ToDo'
+import './ToDo.css'
 
 const UUID = (min, max) => {
   const range = Number(max) - Number(min)
