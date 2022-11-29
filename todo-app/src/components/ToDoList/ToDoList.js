@@ -1,5 +1,10 @@
 import { useReducer, useCallback } from 'react';
-import { ToDoItem } from '../ToDoItem';
+import { ToDoItem } from '~/components/ToDoItem';
+
+// CSS
+import styles from './ToDoList.module.scss';
+import classNames from 'classnames/bind';
+const cx = classNames.bind(styles);
 
 const UUID = (min, max) => {
     const range = Number(max) - Number(min);
@@ -8,6 +13,7 @@ const UUID = (min, max) => {
         getUUID: random,
     };
 };
+
 // 1. Init
 const { getUUID } = UUID('10000000', '99999999');
 const initState = {
@@ -63,15 +69,18 @@ export default function ToDoList({ title }) {
     const handlerChangeInput = useCallback((e) => dispatch({ type: ACTION.SET_JOB, value: e.target.value }), []);
 
     return (
-        <div>
-            <h1>{title}</h1>
-            <input placeholder="do something ..." value={job} onChange={handlerChangeInput} />
-            <button onClick={hadlerAddButton}>Thêm việc</button>
-            <ul>
+        <div className={cx('todo-list')}>
+            <h3 className={cx('todo-list__title')}>{title}</h3>
+            <div className={cx('todo-list-action')}>
+                <input placeholder="do something ..." value={job} onChange={handlerChangeInput} />
+                <button onClick={hadlerAddButton}>Thêm</button>
+            </div>
+
+            <div className={cx('todo-list__jobs')}>
                 {jobs.map((item) => (
                     <ToDoItem key={item.id} id={item.id} name={item.name} onClickRemove={handlerRemove} />
                 ))}
-            </ul>
+            </div>
         </div>
     );
 }
