@@ -9,7 +9,5 @@ export default function BaseButton({ children, disabled }) {
     const styles = ['btn'];
 
     if (disabled) styles.push('btn--disabled');
-    console.log('styles', styles);
-
     return <button className={cx(styles.join(' '))}>{children}</button>;
 }
