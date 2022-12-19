@@ -8,7 +8,14 @@ function App() {
     // const [state, dispatch] = useStore(StoreContext)
     return (
         <div className="app">
-            <BaseButton disabled> Button 001 </BaseButton>
+            <BaseButton
+                onHanlerClick={() => {
+                    console.log('OKE');
+                }}
+            >
+                {' '}
+                Button 001{' '}
+            </BaseButton>
             <BaseButton> Button 002</BaseButton>
             <BaseButton> Button 003 </BaseButton>
         </div>

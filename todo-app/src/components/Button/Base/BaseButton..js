@@ -5,11 +5,14 @@ import classNames from 'classnames/bind';
 
 const cx = classNames.bind(styles);
 
-export default function BaseButton({ children, disabled }) {
+export default function BaseButton({ children, disabled = false, onHanlerClick }) {
     const styles = ['btn'];
 
     if (disabled) styles.push('btn--disabled');
-    console.log('styles', styles);
 
-    return <button className={cx(styles.join(' '))}>{children}</button>;
+    return (
+        <button onClick={onHanlerClick} className={cx(styles.join(' '))}>
+            {children}
+        </button>
+    );
 }
