@@ -9,10 +9,5 @@ export default function BaseButton({ children, disabled = false, onHanlerClick }
     const styles = ['btn'];
 
     if (disabled) styles.push('btn--disabled');
-
-    return (
-        <button onClick={onHanlerClick} className={cx(styles.join(' '))}>
-            {children}
-        </button>
-    );
+    return <button className={cx(styles.join(' '))}>{children}</button>;
 }
